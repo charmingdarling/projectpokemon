@@ -1,0 +1,95 @@
+body {
+  color: blue;
+  text-align: center;
+  font-family: cursive;
+  transition: transform .2s, background-color .2s, color .2s;
+  position: absolute;
+  bottom: 30px; /* Adjust the initial vertical position */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+button {
+  /* space between the buttons */
+  margin: 15px;
+  /* The size of the button */
+  width: 400px;
+  height: 150px;
+  padding: 10px 20px;
+  border: 6px solid blue;
+  border-radius: 5px;
+  background-color: yellow;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  z-index: 1;
+  margin-bottom: 38px; /* Add margin to space the buttons 15 pixels apart vertically */
+  vertical-align: middle;
+  display: inline-block;
+  /* The shadow of the button below the text */
+  box-shadow: 0 15px 15px -5px #00000070, -10px 0 15px -5px darkblue;
+animation-name: slideInleft;
+animation-duration: 1s;
+animation-timing-function: ease-out;
+transform: 0.3s ease-in-out;
+}
+
+@keyframes slideInleft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+button:hover {
+    background-color: blue;
+    color: yellow;
+    transform:translateY(-5px);
+    transition: transform .2s ease, background-color .2s, color .2s;
+    box-shadow: 0 45px 45px -1px #00000070, -20px 0 45px -1px yellow;
+    
+}
+#audio-container {
+    display: none;
+  }
+  #Title {
+    font-size: 100px; /* Adjust the font size as needed */
+    color: yellow;
+    text-shadow: -2px -2px darkblue, 2px -2px darkblue,
+     -2px 2px darkblue, 2px 2px darkblue;
+     font-family:'Courier New', Courier, monospace;
+}
+
+/* Animating Ash Ketchem to come in from the left */
+#Ash {
+  position: absolute;
+  left: -100%;
+  animation-name: slideInleft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  transform: 0.3s ease-in-out;
+}
+
+/*Animating picachu to fade in the center of the screen */
+#Pikachu {
+  position: absolute;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  transform: 0.3s ease-in-out;
+  animation-delay: 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
