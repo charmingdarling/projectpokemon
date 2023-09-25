@@ -1,47 +1,55 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Pokedex extends Model{}
+class Pokedex extends Model {}
 
 Pokedex.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        hp: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        evolving_level: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        attacks: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        defense: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
-        is_Evolved: {
-            type: DataTypes.BOOLEAN
-        }
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        timestamps: false,
-        underscored: true,
-        modelName: 'pokedex',
-        freezeTableName: true 
-    }
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    hp: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    evolving_level: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    attacks: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    defense: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    is_Evolved: {
+      type: DataTypes.BOOLEAN,
+    },
+    // Allows for the user to create a relationship, establish parent>child relationship > without it the 2 models are strangers. Need to be joined.
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+    underscored: true,
+    modelName: 'pokedex',
+    freezeTableName: true,
+  }
 );
 
 module.exports = Pokedex;
