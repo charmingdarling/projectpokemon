@@ -5,10 +5,10 @@
 We decided to try and create a Pokémon turn-based battle system. The project uses Node.js and Express.js for a RESTful API to manage user-server interactions, Handlebars.js for dynamic HTML generation, and MySQL with Sequelize for structured data storage. It follows the Model-View-Controller pattern for code organization, employs security measures like user authentication and data protection, and conducts thorough testing for quality assurance, aligning with the class requirements.
 
 
-## Table of Contents (Optional)
+## Table of Contents
 
 - [General](#general-information)
-- [Description](#description-of-project)
+- [Description](#description)
 - [Deployed Site](#deployed-site)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
@@ -18,7 +18,7 @@ We decided to try and create a Pokémon turn-based battle system. The project us
 
 ## Deployed Site
 
-Experience playing a [Pokémon](link) battle through our Heroku deployment.
+Experience playing a [Pokémon](https://poke-fight-poke-dex1-c86d1d43fd89.herokuapp.com/) battle through our Heroku deployment.
 
 ## Walkthrough Video 
 
@@ -32,7 +32,7 @@ For our second project at Berkeley Coding Bootcamp, we tackled the task of creat
 
 On the front-end, we employed Handlebars.js as our template engine, enabling us to generate HTML content dynamically for a smooth user experience. To store data persistently, we opted for MySQL and Sequelize, ensuring efficient database management while adhering to a well-structured schema for Pokémon and user data.
 
-To enable users to interact with the system, we implemented GET and POST routes. This allows users to access information about their Pokémon, initiate battles, and save their progress. Our project follows the Model-View-Controller (MVC) paradigm, providing clear organization and separation of files to enhance code maintenance.
+We implemented GET and POST routes to enable users to interact with the system. This allows users to access information about their Pokémon, initiate battles, and save their progress. Our project follows the Model-View-Controller (MVC) paradigm, providing clear organization and separation of files to enhance code maintenance.
 
 Security is a priority, so we integrated user authentication through Express-Session and Cookies to protect user instances. Additionally, sensitive information like API keys is securely stored using .ENV variables to prevent unauthorized access.
 
@@ -40,7 +40,7 @@ Lastly, rigorous testing ensures the quality of our application. We focus on wel
 
 ## Technologies Used
 
-- [Node.js v20.5.0](https://nodejs.org/en) - A asynchronous event-driven JavaScript runtime, designed to build scalable network applications.
+- [Node.js v20.5.0](https://nodejs.org/en) - An asynchronous event-driven JavaScript runtime, designed to build scalable network applications.
 - [MySQL v2.2.5](https://www.mysql.com/) - Open-source relational database management system.
  - A templating engine in node js
 - [BCrypt v5.0.0](https://www.npmjs.com/package/bcrypt)
@@ -92,7 +92,7 @@ If you would like to see a local version of the site, follow the steps below:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![Status](https://img.shields.io/badge/Status-Undergoing Updates-red)
+![Status](https://img.shields.io/badge/Status-Undergoing)
 
 ## Contact
 
