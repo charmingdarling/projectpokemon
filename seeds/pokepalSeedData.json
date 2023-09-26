@@ -7,7 +7,7 @@
         "specials": "Flamethrower",
         "rest": 10,
         "defense": 43,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Squirtle",
@@ -17,7 +17,7 @@
         "specials": "Watergun",
         "rest": 10,
         "defense": 65,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Bulbasaur",
@@ -27,7 +27,7 @@
         "specials": "Leaf Storm",
         "rest": 10,
         "defense": 49,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Charmeleon",
@@ -37,7 +37,7 @@
         "specials": "Hidden Power",
         "rest": 10,
         "defense": 58,
-        "is_Evolved": true
+        "is_evolved": true
     },
     {
         "name": "Wartortle",
@@ -47,7 +47,7 @@
         "specials": "Hidden Power",
         "rest": 10,
         "defense": 80,
-        "is_Evolved": true
+        "is_evolved": true
     },
     {
         "name": "Ivysaur",
@@ -57,6 +57,6 @@
         "specials": "Hidden Power",
         "rest": 10,
         "defense": 63,
-        "is_Evolved": true
+        "is_evolved": true
     }
 ]

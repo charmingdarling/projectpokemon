@@ -1,18 +1,22 @@
 [
   {
-    "user": "Zo",
+    "username": "Zo",
+    "email": "zo@poke.com",
     "password": "password12345"
   },
   {
-    "user": "Nurillah",
+    "username": "Nurillah",
+    "email": "nurillah@poke.com",
     "password": "password12345"
   },
   {
-    "user": "Josh",
+    "username": "Josh",
+    "email": "josh@poke.com",
     "password": "password12345"
-  }
+  },
   {
-    "user": "Kim",
+    "username": "Kim",
+    "email": "kim@poke.com",
     "password": "password12345"
   }
 ]

@@ -1,3 +1,5 @@
+// All the relationships - connects the models
+
 const User = require('./User');
 const Pokedex = require('./Pokedex');
 
@@ -15,7 +17,7 @@ Pokedex.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-module.exports = { User, Pokedex };
+module.exports = { User, Pokedex }; // Make sure this exports models
 
 // Model saves the data
 // When it saves the data, then you can CRUD
