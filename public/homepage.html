@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project Pokemon</title>
+    <link rel="stylesheet" type="text/css" href="./css/homepage.css" />
+  </head>
+  <body>
+    <!-- Background image with inline CSS -->
+    <div class="background">
+      <!-- Audio element for the theme song -->
+      <audio id="theme-song" controls autoplay muted>
+        <source src="./audio/theme-song.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <!-- Container for Ash.png image and buttons -->
+      <div class="content">
+        <!-- Ash.png image -->
+        <img
+          src="./images/img/ashgen1.png"
+          alt="Ash Pokemon"
+          class="ash-image"
+        />
+
+        <!-- Buttons for Login and Sign In -->
+        <div class="button-wrapper">
+          <button class="enter-left" onclick="startGame()">Login</button>
+          <button class="enter-right" onclick="continueGame()">Sign In</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/homepage.js"></script>
+  </body>
+</html>

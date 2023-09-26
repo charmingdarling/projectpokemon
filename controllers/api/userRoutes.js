@@ -1,7 +1,12 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const bcrypt = require('bcrypt'); //! <-- NEED
+const { User, Pokedex } = require('../../models');
 
-router.post('/', async (req, res) => {
+// *Sign up //
+
+// HTML Route = URL // Link on browser > Talks to the server of the company
+// HTML
+router.post('/register', async (req, res) => {
   try {
     const userData = await User.create(req.body);
 
@@ -16,6 +21,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// *Login //
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
@@ -39,16 +45,16 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
-      res.json({ user: userData, message: 'You are now logged in!' });
-    });
 
+      res.json({ user: userData, message: 'Successful Login!' });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.post('/logout', (req, res) => {
+// * Logout // Destroy empties out memory storage, which will allow/reset us to be able to go to the login page. Empty the current user.
+router.get('/logout', (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -57,5 +63,7 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+// Put in bcrypt stuff
 
 module.exports = router;

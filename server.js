@@ -6,11 +6,19 @@ const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
+// const SequelizeStore = Captures current user login to your website, you can track their activity (prevents/track hacking)
+const SequelizeStore = require('connect-session-sequelize')(session.Store); // Connects sequelize to sessions
+
+//req.session = computer memory
+//SequelizeStore is in the database
+
+// if you exit the server, all the user info/history will be in the USER model, so it's not lost
+// if it is is the session, once closed/disconnected, it's lost/deleted
 
 const Pokedex = require('./models/Pokedex');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001; // JS says the left of || so then use right side
 
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
@@ -26,8 +34,8 @@ const sess = {
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
@@ -43,5 +51,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening ' + PORT));
 });
