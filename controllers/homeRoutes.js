@@ -2,10 +2,12 @@ const router = require('express').Router();
 const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// if you want to return HTML it should go in homeRoutes
+
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    const projectData = await Project.findAll({ // Find all the 'projects' in the database
       include: [
         {
           model: User,
@@ -13,11 +15,13 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    console.log(projectData);
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const projects = projectData.map((project) => project.get({ plain: true })); // cleans the data
+    console.log(projects);
 
     // Pass serialized data and session flag into template
+    // Which template to use to render this data
     res.render('homepage', {
       projects,
       logged_in: req.session.logged_in,

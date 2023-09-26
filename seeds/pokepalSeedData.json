@@ -5,7 +5,7 @@
         "evolving_level": "Level 10",
         "attacks": "Fire Fang",
         "defense": 43,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Squirtle",
@@ -13,7 +13,7 @@
         "evolving_level": "Level 12",
         "attacks": "Water Pulse",
         "defense": 65,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Bulbasaur",
@@ -21,7 +21,7 @@
         "evolving_level": "Level 12",
         "attacks": "Vine Whip",
         "defense": 49,
-        "is_Evolved": false
+        "is_evolved": false
     },
     {
         "name": "Charmeleon",
@@ -29,7 +29,7 @@
         "evolving_level": "Level 18",
         "attacks": "Flamethrower",
         "defense": 58,
-        "is_Evolved": true
+        "is_evolved": true
     },
     {
         "name": "Wartortle",
@@ -37,7 +37,7 @@
         "evolving_level": "Level 20",
         "attacks": "Hydro Pump",
         "defense": 80,
-        "is_Evolved": true
+        "is_evolved": true
     },
     {
         "name": "Ivysaur",
@@ -45,6 +45,6 @@
         "evolving_level": "Level 20",
         "attacks": "Razor Leaf",
         "defense": 63,
-        "is_Evolved": true
+        "is_evolved": true
     }
 ]
