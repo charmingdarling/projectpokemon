@@ -1,49 +1,61 @@
 [
     {
         "name": "Charmander",
-        "hp": 62,
+        "hp": 100,
         "evolving_level": "Level 10",
-        "attacks": "Fire Fang",
+        "attacks": "Scratch",
+        "specials": "Flamethrower",
+        "rest": 10,
         "defense": 43,
         "is_Evolved": false
     },
     {
         "name": "Squirtle",
-        "hp": 44,
+        "hp": 100,
         "evolving_level": "Level 12",
-        "attacks": "Water Pulse",
+        "attacks": "Headbutt",
+        "specials": "Watergun",
+        "rest": 10,
         "defense": 65,
         "is_Evolved": false
     },
     {
         "name": "Bulbasaur",
-        "hp": 45,
+        "hp": 100,
         "evolving_level": "Level 12",
         "attacks": "Vine Whip",
+        "specials": "Leaf Storm",
+        "rest": 10,
         "defense": 49,
         "is_Evolved": false
     },
     {
         "name": "Charmeleon",
-        "hp": 58,
+        "hp": 100,
         "evolving_level": "Level 18",
         "attacks": "Flamethrower",
+        "specials": "Hidden Power",
+        "rest": 10,
         "defense": 58,
         "is_Evolved": true
     },
     {
         "name": "Wartortle",
-        "hp": 59,
+        "hp": 100,
         "evolving_level": "Level 20",
         "attacks": "Hydro Pump",
+        "specials": "Hidden Power",
+        "rest": 10,
         "defense": 80,
         "is_Evolved": true
     },
     {
         "name": "Ivysaur",
-        "hp": 60,
+        "hp": 100,
         "evolving_level": "Level 20",
         "attacks": "Razor Leaf",
+        "specials": "Hidden Power",
+        "rest": 10,
         "defense": 63,
         "is_Evolved": true
     }

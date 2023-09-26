@@ -27,6 +27,14 @@ Pokedex.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    specials: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    rest: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     defense: {
       type: DataTypes.INTEGER,
       allowNull: false,
