@@ -1,0 +1,94 @@
+ <div id="Header">
+      <h1>Pokemon Battle Game</h1>
+    </div>
+    <br />
+    <div id="SelectionMenu">
+      <h2>Choose your Pokémon.</h2>
+      <img
+        id="SelectionImage"
+        class="PokemonImage"
+        src=""
+        style="display: none";
+      />
+      <br />
+      <input type="button" value="Charmander" onclick="selectCharmander()" />
+      <input type="button" value="Squirtle" onclick="selectSquirtle()" />
+      <input type="button" value="Bulbasaur" onclick="selectBulbasaur()" />
+      <br /><br />
+      <input type="button" value="Start Game" onclick="startGame()" />
+    </div>
+
+    <div id="MainWindow" style="display: none"></div>
+    <table>
+      <tr>
+        <th colspan="2">
+          <h2 id="PlayerPokemonName"></h2>
+        </th>
+        <th>
+          <h2>Versus</h2>
+        </th>
+        <th>
+          <h2 id="EnemyPokemonName"></h2>
+        </th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img id="PlayerImage" class="PokemonImage" src="" />
+        </td>
+        <td rowspan="3">
+          <h3 id="MainText"></h3>
+        </td>
+        <td colspan="2">
+          <img id="EnemyImage" class="PokemonImage" src="" />
+        </td>
+      </tr>
+      <tr>
+        <td>Hit Points:</td>
+        <td id="PlayerHealth">100</td>
+        <td>Hit Points:</td>
+        <td id="EnemyHealth">100</td>
+      </tr>
+      <tr>
+        <td>Energy:</td>
+        <td id="PlayerEnergy">5</td>
+        <td>Hit Points:</td>
+        <td id="EnemyEnergy">5</td>
+      </tr>
+    </table>
+    <br />
+    <table>
+      <tr>
+        <td>
+          <input
+            type="button"
+            id="Attack"
+            value="Attack"
+            onclick="playerAttack()"
+            />
+        </td>
+          <input
+            type="button"
+            id="Special"
+            value="Special"
+            onclick="playerSpecial()"
+            />
+        </td>
+           <input
+            type="button"
+            id="Rest"
+            value="Rest"
+            onclick="playerRest()"
+            />
+         </td>
+      </tr>
+    </table>
+
+      <div id="EndWindow" style="display: none">
+        <h2>Game Over.</h2>
+        <h2 id="EndText"></h2>
+        <br>
+        <input type="button" value ="Play Again!" onclick="location.reload()">
+      </div>
+
+    </body>
+    <script src="/js/battle.js"></script>

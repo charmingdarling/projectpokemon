@@ -1,29 +1,24 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Pokedex, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // if you want to return HTML it should go in homeRoutes
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({ // Find all the 'projects' in the database
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-    console.log(projectData);
-    // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true })); // cleans the data
-    console.log(projects);
-
-    // Pass serialized data and session flag into template
-    // Which template to use to render this data
     res.render('homepage', {
-      projects,
+      // logged_in: req.session.logged_in,
+      logged_in: true,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', async (req, res) => {
+  try {
+    res.render('login', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -31,21 +26,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/battle', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const project = projectData.get({ plain: true });
-
-    res.render('project', {
-      ...project,
+    res.render('battlePage', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
