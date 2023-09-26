@@ -31,10 +31,10 @@ Pokedex.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    //! MARK HELP US, PLEASE. DOES THIS NEED TO BE A BOOLEAN? OR TINY INT?
-    is_evolved: {
-      type: DataTypes.BOOLEAN,
-    },
+    // //! MARK HELP US, PLEASE. DOES THIS NEED TO BE A BOOLEAN? OR TINY INT?
+    // is_evolved: {
+    //   type: DataTypes.BOOLEAN,
+    // },
     // Allows for the user to create a relationship, establish parent>child relationship > without it the 2 models are strangers. Need to be joined.
     user_id: {
       type: DataTypes.INTEGER,
