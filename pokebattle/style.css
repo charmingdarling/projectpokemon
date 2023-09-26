@@ -6,3 +6,12 @@
 #MainText {
   width: 250px;
 }
+
+div, table {
+  margin: auto;
+  text-align: center;
+}
+
+#PlayerImage {
+  transform: scaleX(-1);
+}
