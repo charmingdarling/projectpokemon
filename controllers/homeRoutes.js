@@ -7,8 +7,7 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     res.render('homepage', {
-      // logged_in: req.session.logged_in,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -19,6 +18,16 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
   try {
     res.render('login', {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/signup', async (req, res) => {
+  try {
+    res.render('signup', {
       logged_in: req.session.logged_in,
     });
   } catch (err) {

@@ -1,4 +1,4 @@
-let playAgain = true; // keep track if we should be playing again
+let playAgain = confirm('Would you like to Battle a Pokémon?'); // keep track if we should be playing again
 // While are we doing it here? Because the energy length is kept.
 while (playAgain) {
   let playerHealth = 100; // Player energy
@@ -6,6 +6,7 @@ while (playAgain) {
   let playerEnergy = 3;
   let enemyEnergy = 3;
 
+  //! Think about having a button to reload the page
   // Note: This tutorial is not allowing player/enemy to select which pokemon they are using
   // Might need to create variables for that
 

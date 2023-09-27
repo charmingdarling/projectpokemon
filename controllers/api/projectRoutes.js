@@ -68,14 +68,15 @@ router.get('/:id', async function (req, res) {
   }
 });
 
-// router.delete('/:id', withAuth, async (req, res) => {
+// router.get('/test/:id', async (req, res) => {
 //   try {
-//     const projectData = await Project.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
+//     const datafromDB = [
+//       { name: 'hello', something: 'else' },
+//       { name: 'hello', something: 'else' },
+//       { name: 'hello', something: 'else' },
+//       { name: 'hello', something: 'else' },
+//     ];
+//     res.json(datafromDB);
 //   } catch (err) {
 //     res.status(500).json(err);
 //   }
