@@ -22,13 +22,13 @@ let playerPokemon;
 let playerAttackName;
 let playerSpecialName;
 let playerHealth = 100;
-const playerEnergy = 5;
+let playerEnergy = 5;
 
 let enemyPokemon;
 let enemyAttackName;
 let enemySpecialName;
-const enemyHealth = 100;
-const enemyEnergy = 5;
+let enemyHealth = 100;
+let enemyEnergy = 5;
 
 const attackCost = 2;
 const attackMin = 10;
@@ -109,15 +109,139 @@ function startGame() {
 
   mainText.textContent = `Your opponent chose ${enemyPokemon}.`;
 
-  attackButton.value = enemyAttackName;
-  specialButton.value = enemySpecialName;
+  attackButton.value = playerAttackName;
+  specialButton.value = playerSpecialName;
   document.getElementById("PlayerPokemonName").textContent = playerPokemon;
 }
 
-function playerAttack() {}
-function playerSpecial() {}
-function playerRest() {}
+function enableButtons() {
+  attackButton.disabled = false
+  specialButton.disabled = false
+  restButton.disabled = false
+}
 
-function enemyAttack() {}
-function enemySpecial() {}
-function enemyRest() {}
+function disableButtons() {
+  attackButton.disabled = true
+  specialButton.disabled = true
+  restButton.disabled = true
+}
+
+function updateStats() {
+  playerHealthElement.textContent = String(playerHealth)
+  enemyHealthElement.textContent = String(enemyHealth)
+  playerEnergyElement.textContent = String(playerEnergy)
+  enemyEnergyElement.textContent = String(enemyEnergy)
+}
+
+function endPlayerTurn() {
+  updateStats();
+  disableButtons();
+
+  if (enemyHealth > 0){
+    setTimeout(enemyTurn, 2000);
+    } else {
+    setTimeout(endGame, 2000)
+    }
+  }
+
+
+function playerAttack() {
+  let damage = Math.floor(Math.random()*(attackMax - attackMin +1) + attackMin)
+  enemyHealth -= damage
+  playerEnergy -= attackCost
+
+  mainText.textContent = `Your ${playerPokemon} used ${playerAttackName}! The opponent ${enemyPokemon} took ${damage} damage!`
+
+  endPlayerTurn()
+}
+function playerSpecial() {
+  let damage = Math.floor(Math.random()*(specialMax - specialMin +1) + specialMin)
+  enemyHealth -= damage
+  playerEnergy -= specialCost
+
+  mainText.textContent = `Your ${playerPokemon} used ${playerSpecialName}! The opponent ${enemyPokemon} took ${damage} damage!`
+
+  endPlayerTurn()
+}
+function playerRest() {
+  playerEnergy += 3
+  playerEnergy = Math.min(playerEnergy, 10)
+
+  mainText.textContent = `Your ${playerPokemon} rested and gained 3 energy`
+
+  endPlayerTurn()
+}
+
+function enemyTurn(){
+
+  let min = enemyEnergy >= 4 ? 1 : 2
+  let max = enemyEnergy <= 7 ? 3 : 2
+  let move = Math.floor(Math.random()*(max-min+1)+min)
+
+  switch (move) {
+  case 1: 
+      enemySpecial()
+      break
+  case 2:
+    enemyAttack()
+    break
+  case 3:
+    enemyRest()
+    break
+}
+
+updateStats()
+
+if (playerHealth > 0) {
+  endRound()
+} else {
+  setTimeout(endGame, 2000)
+}
+
+}
+
+function enemyAttack() {
+  let damage = Math.floor(Math.random()*(specialMax - specialMin +1) + specialMin)
+  playerHealth -= damage
+  enemyEnergy -= attackCost
+
+  mainText.textContent = `The opponent ${enemyPokemon} used ${enemySpecialName}! Your ${playerPokemon} took ${damage} damage!`
+}
+function enemySpecial() {
+  let damage = Math.floor(Math.random()*(attackMax - attackMin +1) + attackMin)
+  playerHealth -= damage
+  enemyEnergy -= attackCost
+
+  mainText.textContent = `The opponent ${enemyPokemon} used ${enemyAttackName}! Your ${playerPokemon} took ${damage} damage!`
+}
+function enemyRest() {
+  enemyEnergy += 3
+  enemyEnergy = Math.min(enemyEnergy, 10)
+
+  mainText.textContent = `The opponent ${playerPokemon} rested and gained 3 energy`
+}
+
+function endRound() {
+  playerEnergy += 2
+  playerEnergy = Math.min(playerEnergy, 10)
+  enemyEnergy += 2
+  enemyEnergy = Math.min(enemyEnergy, 10)
+
+  updateStats()
+
+  enableButtons()
+  if (playerEnergy < specialCost) {
+    specialButton.disabled = true
+  }
+}
+
+function endGame() {
+  if (enemyHealth <= 0) {
+    endText.textContent = "You Won!"
+  } else {
+    endText.textContent = "You Lost..."
+  }
+
+  mainWindow.style.display = "none"
+  endWindow.style.display = "block"
+}

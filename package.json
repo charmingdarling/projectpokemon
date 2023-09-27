@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seeds": "node seeds/pokepals.js"
+    "seeds": "node seeds/pokepals.js",
+    "watch": "nodemon server"
   },
   "keywords": [],
   "author": "",

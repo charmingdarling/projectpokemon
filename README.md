@@ -18,6 +18,7 @@ We decided to try and create a Pokémon turn-based battle system. The project us
 
 ## Deployed Site
 
+
 Experience playing a [Pokémon](https://poke-fight-poke-dex1-c86d1d43fd89.herokuapp.com/) battle through our Heroku deployment.
 
 ## Walkthrough Video 
@@ -67,12 +68,23 @@ If you would like to see a local version of the site, follow the steps below:
   2. Change to root directory of the cloned repo in your command line.
   3. Run `npm install` to bring in dependencies.
   4. Create a `.env` file in root directory. 
-    Example of contents: 
-      DB_NAME = 'pokemon_db'
-      DB_USER = 'root'
-      DB_PASSWORD = 'your_password'
-      SECRET = 'your_secret'
-  5. Make a database by logging into MySQL. `mysql -u [YOUR USERNAME] -p`. Enter your password when prompted if applicable. Obtain database by `SOURCE db/schema.sql`.
+
+  Example of contents: 
+
+
+    DB_NAME = 'pokemon_db'
+    DB_USER = 'root'
+    DB_PASSWORD = 'your_password'
+    SECRET = 'your_secret'
+
+  5. Make a database by logging into MySQL. 
+
+    `mysql -u [YOUR USERNAME] -p`. 
+      
+  Enter your password when prompted if applicable. Obtain database by: 
+      
+      `SOURCE db/schema.sql`.
+
   6. Seed the database by running `npm run seed`.
   7. Start the server by running `npm start`.
   8. In your browser, go to `http://localhost:3001`.
