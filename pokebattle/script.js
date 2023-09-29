@@ -58,7 +58,11 @@ function selectBulbasaur() {
 
 function startGame() {
   if (!playerPokemon) {
-    alert("You must first choose a pokemon!"); // SweetAlert?
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'You must first choose a Pokémon!',
+    });
     return;
   }
 
